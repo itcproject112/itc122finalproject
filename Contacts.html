@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Custom CSS */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: linear-gradient(to bottom right, #FFC0CB, #FF7294); /* Gradient background */
+            line-height: 1.6;
+            text-align: center; /* Center align all text */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            align-items: center; /* Align content vertically */
+            justify-content: center; /* Center align horizontally */
+            min-height: 100vh; /* Full height of the viewport */
+            flex-direction: column; /* Align items vertically */
+        }
+
+        .text-content {
+            padding: 0 30px; /* Add some space around the text */
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+        }
+
+        header {
+            background-color: #FF7294;
+            color: #fff;
+            padding: 20px 0;
+            width: 100%; /* Full width */
+        }
+        
+        nav {
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            background-color: #FFE4E8;
+        }
+
+        .about-section {
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .about-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color:#FF7294 ;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%; /* Full width */
+        }
+
+        /* Style for images */
+        .social-icon {
+            margin: 10px; /* Add some space around each image */
+            cursor: pointer;
+        }
+
+        /* Style for text below images */
+        .contact-info {
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id="MenuItem">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="text-content">
+            <!-- Facebook Icons with Links -->
+            <a href="https://www.facebook.com/somerareign" target="_blank">
+                <img class="social-icon" src="reign.jpg" alt="Facebook Profile 1" width="150" height="150">
+                <div class="contact-info">
+                    <p>Name: Reign Brian Angelica S. Duque</p>
+                    <p>Number: 09216216786</p>
+                    <p>Email: somerareign@gmail.com</p>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/JoshielEstacio" target="_blank">
+                <img class="social-icon" src="fort.jpg" alt="Facebook Profile 2"  width="150" height="150">
+                <div class="contact-info">
+                    <p>Name: Fort Joshiel D. Estacio</p>
+                    <p>Number: 09471507245</p>
+                    <p>Email: fortjoshielestacio@gmail.com</p>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/dejustinvera" target="_blank">
+                <img class="social-icon" src="justin.jpg" alt="Facebook Profile 3" width="150" height="150">
+                <div class="contact-info">
+                    <p>Name: Justin Paul C. De Vera</p>
+                    <p>Number: 09696053305</p>
+                    <p>Email: 13justindevera@gmail.com</p>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/kim.coraza.18" target="_blank">
+                <img class="social-icon" src="kim.jpg" alt="Facebook Profile 4" width="150" height="150">
+                <div class="contact-info">
+                    <p>Name: John Kim O. Coraza</p>
+                    <p>Number: 09925921273</p>
+                    <p>Email: kimcoraza143@gmail.com</p>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/loremii35.143" target="_blank">
+                <img class="social-icon" src="christian.jpg" alt="Facebook Profile 5" width="150" height="150">
+                <div class="contact-info">
+                    <p>Name: Christian U. Loremia</p>
+                    <p>Number: 09983707828</p>
+                    <p>Email: christian.loremia035@gmail.com</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Copyright ShiBUY Arellano University 2023-2024</p>
+    </footer>
+</body>
+</html>

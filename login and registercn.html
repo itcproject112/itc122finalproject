@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+        .bgimg {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),url(kpop.png);
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+        .form-box {
+            height: 480px;
+            width: 360px;
+            position: relative;
+            margin: 6% auto;
+            background: white;
+            padding: 5px;
+            overflow: hidden;
+            border-radius: 30px;
+            font-family: "Poetsen One", sans-serif;
+        }
+        .button-box {
+            height: 33px;
+            width: 220px;
+            margin: 10px auto;
+            position: relative;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            border-radius: 30px;
+        }
+        .toggle-btn {
+            height: 33px;
+            padding: 0px 28px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+            font-family: "Poetsen One", sans-serif;
+            font-size: 15px;
+        }
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(to right, pink, blue);
+            border-radius: 30px;
+            transition: .5s;
+        }
+        .social-icons {
+            margin: 30px auto;
+            text-align: center;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 12px;
+            box-shadow: 0 0 20px 0 #7f7f7f3d;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .input-group {
+            top: 170px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+            font-family: "Poetsen One", sans-serif;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
+            font-size: 15px;
+        }
+        .submit-btn {
+            width: 100px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: linear-gradient(to right, pink, blue);
+            border: 0;
+            outline:none;
+            border-radius: 30px;
+            font-family: "Poetsen One", sans-serif;
+            font-size: 9px;
+        }
+        .check-box {
+            margin: 20px 10px 30px 0;
+            
+        }
+        span {
+            color: #777;
+            font-size: 12px;
+            bottom: 68px;
+            position: absolute;
+        }
+        #login {
+            left: 45px;
+        }
+        #register {
+            left: 450px;
+        }
+        #language-select {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-family: "Poetsen One", sans-serif;
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="bgimg">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">登录</button>
+                <button type="button" class="toggle-btn" onclick="register()">注册</button>
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="用户名/邮箱" id="login-email" placeholder="example@email.com" required>
+                <input type="password" class="input-field" placeholder="密码" id="login-password" required>
+                <input type="checkbox" class="check-box"><span>记住我</span>
+                <button type="button" class="submit-btn" onclick="loginUser()">登录</button>
+            </form>
+            <form id="register" class="input-group">
+                <input type="text" id="reg-username" class="input-field" placeholder="用户名" required>
+                <input type="email" id="reg-email" class="input-field" placeholder="邮箱" required>
+                <input type="password" id="reg-password" class="input-field" placeholder="密码" required>
+                <input type="checkbox" id="agree-checkbox" class="check-box"><span>我同意<a href="#" target="_blank">条款和条件</a></span>
+                <button type="button" class="submit-btn" onclick="registerUser()">注册</button>
+            </form>
+            <div class="social-icons">
+                <img src="fbicon.png" onclick="fbicon()">
+                <img src="googleicon.png" onclick="googleicon()">
+                <img src="twticon.png" onclick="twticon()">
+            </div>
+        </div>
+        <select id="language-select" onchange="changeLanguage()">
+		    <option value="cn">中文</option>
+            <option value="en">English</option>
+            <option value="kr">한국어</option>
+            <option value="es">Español</option>
+			<option value="jp">日本語</option>
+        </select>
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+        function registerUser() {
+            var username = document.getElementById("reg-username").value;
+            var email = document.getElementById("reg-email").value;
+            var password = document.getElementById("reg-password").value;
+            var agreeCheckbox = document.getElementById("agree-checkbox");
+
+            if (!username || !email || !password) {
+                console.error("请提供所有必要的信息。");
+                return false;
+            }
+
+            if (password.length < 8) {
+                console.error("密码必须至少为8个字符。");
+                return false;
+            }
+
+            if (!agreeCheckbox.checked) {
+                console.error("请同意条款和条件。");
+                return false;
+            }
+
+            var emailData = {
+                to: email,
+                subject: "电子邮件验证",
+                body: "请点击下面的链接验证您的电子邮件：\nhttp://example.com/verify?email=" + encodeURIComponent(email)
+            };
+
+            console.log("验证邮件已发送：", emailData);
+            
+            alert("验证邮件已发送至 " + email + "。请查看您的收件箱。");
+
+            console.log("注册成功！");
+            return true;
+        }
+
+        function loginUser() {
+            var email = document.getElementById("login-email").value;
+            var password = document.getElementById("login-password").value;
+
+            if (email === "admin" && password === "admin") {
+                console.log("Login successful!");
+            
+                window.location.href = "https://example.com/dashboard"; // palitan mo nalang 
+                return true;
+            } else {
+                console.error("Invalid email or password.");
+            
+                alert("Invalid email or password. Please try again.");
+            return false;
+        }
+    }
+        function changeLanguage() {
+            var select = document.getElementById("language-select");
+            var selectedValue = select.options[select.selectedIndex].value;
+
+            if (selectedValue === "en") {
+                window.location.href = "login and register.html";
+            } else if (selectedValue === "kr") {
+                window.location.href = "login and registerkr.html";
+            } else if (selectedValue === "es") {
+                window.location.href = "login and registeres.html";
+            } else if (selectedValue === "jp") {
+                window.location.href = "login and registerjp.html";
+			} else if (selectedValue === "cn") {
+                window.location.href = "login and registercn.html";
+            }
+        }
+    </script>
+</body>
+</html>
